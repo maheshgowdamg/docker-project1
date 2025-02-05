@@ -9,10 +9,10 @@ pipeline{
         stage('Check and remove container'){
             steps{
                 script{
-                    def containerExists = sh(script: "docker ps -q -f name=web", returnStdout: true).trim()
+                    def containerExists = sh(script: "docker ps -q -f name=webapp", returnStdout: true).trim()
                     if (containerExists) {
-                    sh "docker stop web"
-                    sh "docker rm web"
+                    sh "docker stop webapp"
+                    sh "docker rm webapp"
                     }
                 }
             }
