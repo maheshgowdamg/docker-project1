@@ -50,7 +50,7 @@ pipeline{
         }
         stage('Run a container'){
             steps{
-                sh 'docker run -it -d --name chandu -p 8081:8080 maheshgowdamg25/app'
+                sh 'docker run -it -d --name webapp -p 8081:8080 maheshgowdamg25/app'
             }
         }
     }
@@ -62,7 +62,7 @@ pipeline{
             echo 'Deployment successful'
         }
         failure {
-            sh 'docker rm -f web'
+            sh 'docker rm -f webapp'
         }
         
     }
