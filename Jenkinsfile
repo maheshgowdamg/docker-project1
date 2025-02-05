@@ -59,7 +59,7 @@ pipeline{
             echo 'Deployed'
         }
         success {
-            echo 'Deployment successful'
+            echo 'successful'
         }
         failure {
             sh 'docker rm -f webapp'
